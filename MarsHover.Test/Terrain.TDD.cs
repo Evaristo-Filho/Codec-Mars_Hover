@@ -23,9 +23,15 @@ namespace MarsHover.Test
             //Must Have at leat one position
             if (terrain.XCoordinate < 1)
                 Assert.Fail("invalid Coordinate: Y component");
-            if (terrain.FindHover() == null)
-                Assert.Fail("No Hover present on terrain");
         }
+
+        [TestMethod]
+        public void HoverPresence()
+        {
+            Assert.IsNotNull(terrain.FindHover(), "No hover present on terrain");
+        }
+
+
 
     }
 }
