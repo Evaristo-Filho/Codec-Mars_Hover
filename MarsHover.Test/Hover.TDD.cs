@@ -11,7 +11,7 @@ namespace MarsHover.Test
         private ITerrain terrain;
         public Hover()
         {
-            terrain = new Terrain.Terrain(5, 5, hover);
+            terrain = new Terrain.Terrain(5, 5);
             if (hover == null)
                 hover = new MarsHover.Hover.Hover(terrain);
             

@@ -41,6 +41,21 @@ namespace MarsHover.Hover
             }
         }
 
+        public void Run(string commands)
+        {
+            commands = commands.ToLower();
+            var cmd = commands.ToArray();
+
+            foreach (var c in cmd)
+            {
+                if (c == 'f')
+                    this.Move();
+                else
+                    this.Rotate(c.ToString());
+
+            }
+        }
+
         public int X { get; set; }
         public int Y { get; set; }
 
@@ -50,26 +65,26 @@ namespace MarsHover.Hover
             {
                 case 1:
                     {
-                        if (Y+1 <= terrain.YCoordinate)
+                        if (Y + 1 <= terrain.YCoordinate)
                             Y++;
 
                         break;
                     }
                 case 2:
                     {
-                        if (X+1 <= terrain.XCoordinate)
+                        if (X + 1 <= terrain.XCoordinate)
                             X++;
                         break;
                     }
                 case 3:
                     {
-                        if (Y-1 >= 0)
+                        if (Y - 1 >= 0)
                             Y--;
                         break;
                     }
                 case 4:
                     {
-                        if (X-1 >= 0)
+                        if (X - 1 >= 0)
                             X--;
                         break;
                     }
