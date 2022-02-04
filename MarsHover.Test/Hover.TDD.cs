@@ -11,9 +11,10 @@ namespace MarsHover.Test
         private ITerrain terrain;
         public Hover()
         {
-            if (hover == null)
-                hover = new MarsHover.Hover.Hover();
             terrain = new Terrain.Terrain(5, 5, hover);
+            if (hover == null)
+                hover = new MarsHover.Hover.Hover(terrain);
+            
         }
 
         [TestMethod]
@@ -48,7 +49,9 @@ namespace MarsHover.Test
         {
             hover.Rotate("L");
             hover.Move();
-            Assert.AreEqual(1, hover.X);
+            hover.Move();
+            hover.Move();
+            Assert.AreEqual(0, hover.X);
             Assert.AreEqual(1, hover.Y);
 
         }

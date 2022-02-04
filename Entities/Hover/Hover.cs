@@ -1,18 +1,20 @@
-﻿namespace MarsHover.Hover
+﻿using MarsHover.Terrain;
+
+namespace MarsHover.Hover
 
 {
     public class Hover : IHover
     {
         private readonly Dictionary<string, int> direction;
-
-        public Hover()
+        private readonly ITerrain terrain;
+        public Hover(ITerrain terrain)
         {
             direction = new Dictionary<string, int>();
             direction.Add("N", 1);
             direction.Add("S", 3);
             direction.Add("E", 2);
             direction.Add("W", 4);
-
+            this.terrain = terrain;
             Orientation = 1;
             X = 1;
             Y = 1;
@@ -46,19 +48,31 @@
         {
             switch (Orientation)
             {
-                case 1: 
-                    Y++;
-                    break;
-                case 2: 
-                    X++;
-                    break;
-                case 3: 
-                    Y--;
-                    break;
-                case 4: 
-                    X--;
-                    break;
+                case 1:
+                    {
+                        if (Y+1 <= terrain.YCoordinate)
+                            Y++;
 
+                        break;
+                    }
+                case 2:
+                    {
+                        if (X+1 <= terrain.XCoordinate)
+                            X++;
+                        break;
+                    }
+                case 3:
+                    {
+                        if (Y-1 >= 0)
+                            Y--;
+                        break;
+                    }
+                case 4:
+                    {
+                        if (X-1 >= 0)
+                            X--;
+                        break;
+                    }
             }
         }
 
