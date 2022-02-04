@@ -13,7 +13,7 @@
             direction.Add("E", 2);
             direction.Add("W", 4);
 
-            
+            Orientation = 1;
         }
 
         public int Orientation { get; set; }
