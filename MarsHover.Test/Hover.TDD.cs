@@ -13,7 +13,7 @@ namespace MarsHover.Test
         {
             if (hover == null)
                 hover = new MarsHover.Hover.Hover();
-            terrain= new Terrain.Terrain(5,5,hover);
+            terrain = new Terrain.Terrain(5, 5, hover);
         }
 
         [TestMethod]
@@ -25,8 +25,18 @@ namespace MarsHover.Test
         [TestMethod]
         public void InitialPosition()
         {
-            Assert.AreEqual(1,hover.X);
-            Assert.AreEqual(1,hover.Y); 
+            Assert.AreEqual(1, hover.X);
+            Assert.AreEqual(1, hover.Y);
+        }
+
+        [TestMethod]
+        public void TestMovement()
+        {
+            hover.Move();
+            hover.Move();
+            hover.Move();
+
+            Assert.AreEqual(4,hover.Y);
         }
 
 
