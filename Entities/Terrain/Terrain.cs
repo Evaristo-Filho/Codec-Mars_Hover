@@ -13,11 +13,11 @@ namespace MarsHover.Terrain
         public int XCoordinate { get; set; }
         public int YCoordinate { get; set; }
 
-        public Terrain(int X, int Y)
+        public Terrain(int X, int Y, IHover hover)
         {
             this.XCoordinate = X;
             this.YCoordinate = Y;
-            this.Hover = new Hover.Hover();
+            this.Hover = hover;
         }
 
         public IHover FindHover()
