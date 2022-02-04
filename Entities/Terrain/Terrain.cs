@@ -17,11 +17,12 @@ namespace MarsHover.Terrain
         {
             this.XCoordinate = X;
             this.YCoordinate = Y;
+            this.Hover = new Hover.Hover();
         }
 
         public IHover FindHover()
         {
-            throw new NotImplementedException();
+            return Hover;
         }
     }
 }

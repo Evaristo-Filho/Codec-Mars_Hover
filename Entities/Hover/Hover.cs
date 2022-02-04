@@ -1,7 +1,7 @@
 ﻿namespace MarsHover.Hover
 
 {
-    public class Hover
+    public class Hover : IHover
     {
 
     }
