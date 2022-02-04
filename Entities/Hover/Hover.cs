@@ -15,8 +15,27 @@
 
             Orientation = 1;
         }
+        private int orientation;
+        public int Orientation
+        {
+            get { return orientation; }
+            private set
+            {
+                switch (value)
+                {
+                    case 5:
+                        orientation = 1;
+                        break;
 
-        public int Orientation { get; set; }
+                    case 0:
+                        orientation = 4;
+                        break;
+                    default:
+                        orientation = value;
+                        break;
+                }
+            }
+        }
 
 
         public void Move()
@@ -24,9 +43,15 @@
             throw new NotImplementedException();
         }
 
-        public void Rotate(string Direction)
+        public bool Rotate(string direction)
         {
-            throw new NotImplementedException();
+            if (!direction.Equals("R", StringComparison.InvariantCultureIgnoreCase) &&!direction.Equals("L", StringComparison.InvariantCultureIgnoreCase))
+                return false;
+            if (direction.Equals("R", StringComparison.InvariantCultureIgnoreCase))
+                Orientation++;
+            else
+                Orientation--;
+            return true;
         }
     }
 }

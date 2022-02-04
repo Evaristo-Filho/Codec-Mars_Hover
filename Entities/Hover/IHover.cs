@@ -8,8 +8,8 @@ namespace MarsHover.Hover
 {
     public interface IHover
     {
-        public int Orientation { get; set; }
+        public int Orientation { get; }
         void Move();
-        void Rotate(string Direction);
+        bool Rotate(string Direction);
     }
 }
