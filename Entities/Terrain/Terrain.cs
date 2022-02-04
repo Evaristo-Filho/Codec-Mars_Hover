@@ -13,6 +13,12 @@ namespace MarsHover.Terrain
         public int XCoordinate { get; set; }
         public int YCoordinate { get; set; }
 
+        public Terrain(int X, int Y)
+        {
+            this.XCoordinate = X;
+            this.YCoordinate = Y;
+        }
+
         public IHover FindHover()
         {
             throw new NotImplementedException();

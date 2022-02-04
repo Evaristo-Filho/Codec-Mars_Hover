@@ -11,7 +11,7 @@ namespace MarsHover.Test
         public TerrainTest()
         {
             if (this.terrain == null)
-                this.terrain = new Terrain.Terrain();
+                this.terrain = new Terrain.Terrain(5,5);
         }
 
         [TestMethod]
