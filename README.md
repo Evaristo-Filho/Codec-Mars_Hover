@@ -21,6 +21,8 @@ The robot will always start at X: 1, Y: 1 facing NORTH. If the robot reaches the
 
 Your goal is to navigate the robot and print the final position.
 
+_Assumption: Turns are made by 90 degrees_
+
 ### Example:
 
 Input:
