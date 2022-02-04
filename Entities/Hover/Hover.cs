@@ -5,8 +5,7 @@
     {
         private readonly Dictionary<string, int> direction;
 
-        private readonly Func<bool> move;
-        public Hover(Func<bool> move=null)
+        public Hover()
         {
             direction = new Dictionary<string, int>();
             direction.Add("N", 1);
@@ -14,7 +13,6 @@
             direction.Add("E", 2);
             direction.Add("W", 4);
 
-            this.move = move;
             Orientation = 1;
         }
         private int orientation;
@@ -39,10 +37,12 @@
             }
         }
 
+        public int X { get; set; }
+        public int Y { get; set; }
 
         public void Move()
         {
-            this.move();
+
         }
 
         public bool Rotate(string direction)

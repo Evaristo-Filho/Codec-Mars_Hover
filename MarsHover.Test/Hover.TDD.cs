@@ -25,7 +25,7 @@ namespace MarsHover.Test
         [TestMethod]
         public void MoveHover()
         {
-            hover.Move();
+            
         }
 
 
