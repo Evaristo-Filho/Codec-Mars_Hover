@@ -9,7 +9,7 @@ namespace MarsHover.Terrain
 {
     public class Terrain : ITerrain
     {
-        private IHover Hover;
+
         public int XCoordinate { get; set; }
         public int YCoordinate { get; set; }
 
@@ -17,12 +17,7 @@ namespace MarsHover.Terrain
         {
             this.XCoordinate = X;
             this.YCoordinate = Y;
-            this.Hover = hover;
         }
 
-        public IHover FindHover()
-        {
-            return Hover;
-        }
     }
 }

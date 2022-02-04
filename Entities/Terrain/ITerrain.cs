@@ -12,6 +12,5 @@ namespace MarsHover.Terrain
         public int XCoordinate { get; set; }
         public int YCoordinate { get; set; }
 
-        IHover FindHover();
     }
 }
