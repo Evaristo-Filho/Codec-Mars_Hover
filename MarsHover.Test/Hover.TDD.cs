@@ -37,6 +37,10 @@ namespace MarsHover.Test
             hover.Move();
 
             Assert.AreEqual(4,hover.Y);
+            hover.Rotate("R");
+            hover.Move();
+            Assert.AreEqual(2,hover.X);
+
         }
 
 

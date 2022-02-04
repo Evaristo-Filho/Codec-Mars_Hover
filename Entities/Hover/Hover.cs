@@ -14,8 +14,8 @@
             direction.Add("W", 4);
 
             Orientation = 1;
-            X=1;
-            Y=1;
+            X = 1;
+            Y = 1;
         }
         private int orientation;
         public int Orientation
@@ -44,7 +44,22 @@
 
         public void Move()
         {
+            switch (Orientation)
+            {
+                case 1: 
+                    Y++;
+                    break;
+                case 2: 
+                    X++;
+                    break;
+                case 3: 
+                    Y--;
+                    break;
+                case 4: 
+                    X--;
+                    break;
 
+            }
         }
 
         public bool Rotate(string direction)
