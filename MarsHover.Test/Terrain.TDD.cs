@@ -1,14 +1,28 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using MarsHover.Terrain;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MarsHover.Test
 {
     [TestClass]
-    public class Terrain
+    public class TerrainTest
     {
-        [TestMethod]
-        public void Test_Hover()
+        private ITerrain terrain;
+
+        public TerrainTest()
         {
-            Assert.Fail();
+            if (this.terrain == null)
+                this.terrain = new Terrain.Terrain();
+        }
+
+        [TestMethod]
+        public void TestTerrain()
+        {
+            //Must have at least one position
+            if (terrain.XCoordinate < 1)
+                Assert.Fail();
+            //Must Have at leat one position
+            if (terrain.XCoordinate < 1)
+                Assert.Fail();
         }
 
     }

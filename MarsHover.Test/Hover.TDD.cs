@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MarsHover.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class Hover
     {
         [TestMethod]
         public void Test_Hover()
