@@ -19,19 +19,35 @@ namespace MarsHover.Test
             Assert.AreEqual(1, hover.Orientation);
         }
 
-            [TestMethod]
+        [TestMethod]
         public void MoveHover()
         {
             Assert.Fail();
         }
 
 
-        
+
 
         [TestMethod]
-        public void RotateHover()
+        public void RotateRight()
         {
-            
+            hover.Rotate("R");
+            if (hover.Orientation != 2)
+                Assert.Fail("Rover position is wrong");
+            hover.Rotate("R");
+            hover.Rotate("R");
+            hover.Rotate("R");
+            if (hover.Orientation != 1)
+                Assert.Fail("Hover orientetion is wrong");
+
+        }
+
+        [TestMethod]
+        public void RotateLeft()
+        {
+            hover.Rotate("L");
+            if (hover.Orientation != 4)
+                Assert.Fail("Rover position is wrong");
         }
 
     }
