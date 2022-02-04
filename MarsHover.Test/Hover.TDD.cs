@@ -36,10 +36,20 @@ namespace MarsHover.Test
             hover.Move();
             hover.Move();
 
-            Assert.AreEqual(4,hover.Y);
+            Assert.AreEqual(4, hover.Y);
             hover.Rotate("R");
             hover.Move();
-            Assert.AreEqual(2,hover.X);
+            Assert.AreEqual(2, hover.X);
+
+        }
+
+        [TestMethod]
+        public void MoveInsideTerrain()
+        {
+            hover.Rotate("L");
+            hover.Move();
+            Assert.AreEqual(1, hover.X);
+            Assert.AreEqual(1, hover.Y);
 
         }
 
