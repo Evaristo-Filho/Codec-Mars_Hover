@@ -14,6 +14,8 @@
             direction.Add("W", 4);
 
             Orientation = 1;
+            X=1;
+            Y=1;
         }
         private int orientation;
         public int Orientation
