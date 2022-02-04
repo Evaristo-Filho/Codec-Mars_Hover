@@ -5,7 +5,8 @@
     {
         private readonly Dictionary<string, int> direction;
 
-        public Hover()
+        private readonly Func<bool> move;
+        public Hover(Func<bool> move=null)
         {
             direction = new Dictionary<string, int>();
             direction.Add("N", 1);
@@ -13,6 +14,7 @@
             direction.Add("E", 2);
             direction.Add("W", 4);
 
+            this.move = move;
             Orientation = 1;
         }
         private int orientation;
@@ -40,12 +42,12 @@
 
         public void Move()
         {
-            throw new NotImplementedException();
+            this.move();
         }
 
         public bool Rotate(string direction)
         {
-            if (!direction.Equals("R", StringComparison.InvariantCultureIgnoreCase) &&!direction.Equals("L", StringComparison.InvariantCultureIgnoreCase))
+            if (!direction.Equals("R", StringComparison.InvariantCultureIgnoreCase) && !direction.Equals("L", StringComparison.InvariantCultureIgnoreCase))
                 return false;
             if (direction.Equals("R", StringComparison.InvariantCultureIgnoreCase))
                 Orientation++;

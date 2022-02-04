@@ -1,4 +1,5 @@
 using MarsHover.Hover;
+using MarsHover.Terrain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MarsHover.Test
@@ -7,10 +8,12 @@ namespace MarsHover.Test
     public class Hover
     {
         private IHover hover;
+        private ITerrain terrain;
         public Hover()
         {
             if (hover == null)
                 hover = new MarsHover.Hover.Hover();
+            terrain= new Terrain.Terrain(5,5,hover);
         }
 
         [TestMethod]
@@ -22,7 +25,7 @@ namespace MarsHover.Test
         [TestMethod]
         public void MoveHover()
         {
-            Assert.Fail();
+            hover.Move();
         }
 
 
