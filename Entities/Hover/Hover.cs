@@ -5,15 +5,15 @@ namespace MarsHover.Hover
 {
     public class Hover : IHover
     {
-        private readonly Dictionary<string, int> direction;
+        public readonly Dictionary<string, int> direction;
         private readonly ITerrain terrain;
         public Hover(ITerrain terrain)
         {
             direction = new Dictionary<string, int>();
-            direction.Add("N", 1);
-            direction.Add("S", 3);
-            direction.Add("E", 2);
-            direction.Add("W", 4);
+            direction.Add("North", 1);
+            direction.Add("South", 3);
+            direction.Add("East", 2);
+            direction.Add("West", 4);
             this.terrain = terrain;
             Orientation = 1;
             X = 1;

@@ -25,7 +25,7 @@ class Program
         var hover = new MarsHover.Hover.Hover(terrain);
         hover.Run(movSequence);
 
-        Console.WriteLine("Result:{0},{1},{2}",hover.X, hover.Y, hover.Orientation);
+        Console.WriteLine("Result:{0},{1},{2}", hover.X, hover.Y, hover.direction.FirstOrDefault(x => x.Value == hover.Orientation).Key);
 
 
 
