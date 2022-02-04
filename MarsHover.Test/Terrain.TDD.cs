@@ -11,7 +11,7 @@ namespace MarsHover.Test
         public TerrainTest()
         {
             if (this.terrain == null)
-                this.terrain = new Terrain.Terrain(5,5);
+                this.terrain = new Terrain.Terrain(5, 5);
         }
 
         [TestMethod]
@@ -19,10 +19,12 @@ namespace MarsHover.Test
         {
             //Must have at least one position
             if (terrain.XCoordinate < 1)
-                Assert.Fail();
+                Assert.Fail("Invalid Coordinate: X component");
             //Must Have at leat one position
             if (terrain.XCoordinate < 1)
-                Assert.Fail();
+                Assert.Fail("invalid Coordinate: Y component");
+            if (terrain.FindHover() == null)
+                Assert.Fail("No Hover present on terrain");
         }
 
     }
