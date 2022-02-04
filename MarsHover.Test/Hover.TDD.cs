@@ -17,15 +17,16 @@ namespace MarsHover.Test
         }
 
         [TestMethod]
-        public void InitialPosition()
+        public void InitialOrientation()
         {
             Assert.AreEqual(1, hover.Orientation);
         }
 
         [TestMethod]
-        public void MoveHover()
+        public void InitialPosition()
         {
-            
+            Assert.AreEqual(1,hover.X);
+            Assert.AreEqual(1,hover.Y); 
         }
 
 
